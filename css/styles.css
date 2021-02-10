@@ -162,4 +162,18 @@ body {
 .section-newsletter {
   background-color: #fcfdff;
 }
+
+.section-footer .section-inner {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.copyrigth {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #aeb8d0;
+  margin-top: 28px;
+  margin-left: 96px;
+}
 /*# sourceMappingURL=styles.css.map */

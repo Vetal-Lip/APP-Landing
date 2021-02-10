@@ -223,5 +223,17 @@ body {
 
 // === FOOTER ===
 .section-footer {
+  .section-inner {
+    padding-top: $padding-vertical-sm;
+    padding-bottom: $padding-vertical-sm;
+  }
+}
+.copyrigth {
+  @include quicksand;
+  font-size: $fs-sm;
+  font-weight: $fw-medium;
+  color: #aeb8d0;
+  margin-top: $base * 7;
+  margin-left: $base * 24;
 }
 // === / FOOTER ===
