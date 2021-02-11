@@ -246,8 +246,27 @@ h5 {
 }
 
 .section-customers .section-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.section-customers .section-inner a {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  opacity: 0.4;
+}
+
+.section-customers .section-inner a:hover {
+  opacity: 1;
 }
 
 .section-plan-and-manage {
