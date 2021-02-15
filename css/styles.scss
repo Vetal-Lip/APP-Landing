@@ -66,6 +66,7 @@ body {
 }
 
 .btn {
+  display: inline-block;
   box-sizing: border-box;
   border: 1px solid transparent;
   background: none;
@@ -76,6 +77,7 @@ body {
   text-decoration: none;
   border-radius: 2px;
   transition: $transition;
+  white-space: nowrap;
 
   &--primary {
     background-color: #d2e1ff;
@@ -101,6 +103,15 @@ body {
 
     &:hover {
       background-color: darken(#d2e1ff, 5%);
+    }
+  }
+
+  &--grayscale {
+    color: #7382a3;
+    background-color: #e8ecf4;
+
+    &:hover {
+      background-color: darken(#e8ecf4, 5%);
     }
   }
 
@@ -719,6 +730,75 @@ h5 {
 
 // === FAQ ===
 .section-faq {
+  h4 {
+    font-weight: $fw-medium;
+  }
+}
+
+.faq-accordion {
+  &__item {
+    $parent: &;
+
+    border-bottom: 1px solid #d8e3fe;
+
+    &--active {
+      .arrow {
+        stroke: #495274;
+        // stroke: #8E96B7;
+      }
+
+      #{$parent}-trigger {
+        color: #495274;
+        font-weight: $fw-bold;
+
+        &-icon {
+          transform: rotate(0);
+        }
+      }
+
+      #{$parent}-content {
+        display: flex;
+      }
+    }
+
+    &-trigger {
+      display: flex;
+      cursor: pointer;
+      padding: $base * 4;
+
+      &-icon {
+        width: $base * 4;
+        text-align: center;
+        margin-right: $base * 4;
+        transform: rotate(180deg);
+
+        .arrow {
+          stroke: #8e96b7;
+          // stroke: #495274;
+        }
+      }
+
+      &-text {
+        font-size: $fs-md;
+      }
+    }
+
+    &-content {
+      display: none;
+      padding: 0 $base * 4 $base * 4 $base * 12;
+      border-bottom: 1px solid #d8e3fe;
+
+      &-text {
+        flex-grow: 1;
+        line-height: 2;
+        font-size: $fs-sm;
+      }
+
+      &-btn {
+        margin-left: $base * 15;
+      }
+    }
+  }
 }
 // === / FAQ ===
 

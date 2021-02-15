@@ -36,6 +36,7 @@ body {
 }
 
 .btn {
+  display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 1px solid transparent;
@@ -48,6 +49,7 @@ body {
   border-radius: 2px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  white-space: nowrap;
 }
 
 .btn--primary {
@@ -75,6 +77,15 @@ body {
 
 .btn--secondary:hover {
   background-color: #b9d0ff;
+}
+
+.btn--grayscale {
+  color: #7382a3;
+  background-color: #e8ecf4;
+}
+
+.btn--grayscale:hover {
+  background-color: #d7deec;
 }
 
 .btn--no-bg {
@@ -741,6 +752,76 @@ h5 {
   background-color: #fff;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+.section-faq h4 {
+  font-weight: 500;
+}
+
+.faq-accordion__item {
+  border-bottom: 1px solid #d8e3fe;
+}
+
+.faq-accordion__item--active .arrow {
+  stroke: #495274;
+}
+
+.faq-accordion__item--active .faq-accordion__item-trigger {
+  color: #495274;
+  font-weight: 700;
+}
+
+.faq-accordion__item--active .faq-accordion__item-trigger-icon {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.faq-accordion__item--active .faq-accordion__item-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.faq-accordion__item-trigger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  padding: 16px;
+}
+
+.faq-accordion__item-trigger-icon {
+  width: 16px;
+  text-align: center;
+  margin-right: 16px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.faq-accordion__item-trigger-icon .arrow {
+  stroke: #8e96b7;
+}
+
+.faq-accordion__item-trigger-text {
+  font-size: 15px;
+}
+
+.faq-accordion__item-content {
+  display: none;
+  padding: 0 16px 16px 48px;
+  border-bottom: 1px solid #d8e3fe;
+}
+
+.faq-accordion__item-content-text {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  line-height: 2;
+  font-size: 12px;
+}
+
+.faq-accordion__item-content-btn {
+  margin-left: 60px;
 }
 
 .section-get-started {
