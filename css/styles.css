@@ -79,6 +79,15 @@ body {
   background-color: #b9d0ff;
 }
 
+.btn--secondary-inverted {
+  color: #565f82;
+  background-color: #fff;
+}
+
+.btn--secondary-inverted:hover {
+  background-color: #f2f2f2;
+}
+
 .btn--grayscale {
   color: #7382a3;
   background-color: #e8ecf4;
@@ -97,6 +106,16 @@ body {
 .btn--no-bg:hover {
   color: #7c87b7;
   border: 1px solid #a1a1c8;
+}
+
+.btn--no-bg-inverted {
+  color: #c7d3ff;
+  border-color: #a0b4ff;
+}
+
+.btn--no-bg-inverted:hover {
+  color: white;
+  border-color: #87a0ff;
 }
 
 h1,
@@ -279,7 +298,7 @@ h5 {
 }
 
 .slider-hero-image__item-content .text {
-  width: 55%;
+  max-width: 55%;
   margin: 0 auto;
   margin-bottom: 20px;
   line-height: 2;
@@ -825,7 +844,52 @@ h5 {
 }
 
 .section-get-started {
-  background-color: #6888ff;
+  position: relative;
+  background: linear-gradient(229.32deg, #6888ff 12.77%, #5e80ff 73.11%);
+  text-align: center;
+  color: #fff;
+}
+
+.section-get-started::before {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(../img/clouds-get-started.svg) no-repeat 50% 50%;
+}
+
+.section-get-started .section-inner {
+  position: relative;
+  z-index: 10;
+}
+
+.section-get-started h2,
+.section-get-started h5 {
+  color: #fff;
+}
+
+.section-get-started h2 {
+  font-weight: 300;
+}
+
+.section-get-started h2 span {
+  font-weight: 500;
+}
+
+.section-get-started .text {
+  max-width: 75%;
+  margin: 0 auto;
+  line-height: 2;
+  margin-bottom: 64px;
+}
+
+.section-get-started .btn-group {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .section-newsletter {

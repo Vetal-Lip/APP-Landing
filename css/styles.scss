@@ -104,6 +104,15 @@ body {
     &:hover {
       background-color: darken(#d2e1ff, 5%);
     }
+
+    &-inverted {
+      color: #565f82;
+      background-color: #fff;
+
+      &:hover {
+        background-color: darken(#fff, 5%);
+      }
+    }
   }
 
   &--grayscale {
@@ -123,6 +132,16 @@ body {
     &:hover {
       color: darken(#adb4d2, 15%);
       border: 1px solid darken(#d1d1e4, 15%);
+    }
+
+    &-inverted {
+      color: #c7d3ff;
+      border-color: #a0b4ff;
+
+      &:hover {
+        color: lighten(#c7d3ff, 15%);
+        border-color: darken(#a0b4ff, 5%);
+      }
     }
   }
 }
@@ -303,7 +322,7 @@ h5 {
       }
 
       .text {
-        width: 55%;
+        max-width: 55%;
         margin: 0 auto;
         margin-bottom: $base * 5;
         line-height: 2;
@@ -804,7 +823,48 @@ h5 {
 
 // === GET-STARTED ===
 .section-get-started {
-  background-color: #6888ff;
+  position: relative;
+  background: linear-gradient(229.32deg, #6888ff 12.77%, #5e80ff 73.11%);
+
+  text-align: center;
+  color: #fff;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(../img/clouds-get-started.svg) no-repeat 50% 50%;
+  }
+  .section-inner {
+    position: relative;
+    z-index: 10;
+  }
+  h2,
+  h5 {
+    color: #fff;
+  }
+
+  h2 {
+    font-weight: $fw-light;
+    span {
+      font-weight: $fw-medium;
+    }
+  }
+
+  .text {
+    max-width: 75%;
+    margin: 0 auto;
+    line-height: 2;
+    margin-bottom: $base * 16;
+  }
+
+  .btn-group {
+    justify-content: center;
+  }
 }
 // === / GET-STARTED ===
 
