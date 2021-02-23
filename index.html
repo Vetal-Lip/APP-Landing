@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Landing page">
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Document</title>
@@ -13,8 +14,10 @@
     <header class="section-outer section-header">
       <div class="section-inner section-inner--wide">
         <div class="main-novigation">
-          <a href="#" class="logo"></a>
+          <h1 class="logo">
+          <a href="#" class="logo__link" aria-label="Logo"></a>
           <!-- /.logo -->
+        </h1>
           <nav class="nav">
             <ul class="nav-wrapper">
               <li class="nav-wrapper__item">
@@ -42,7 +45,7 @@
           <div class="socials">
             <ul class="socials-wrapper">
               <li class="socials-wrapper__item">
-                <a href="#" class="socials-wrapper__item-link"
+                <a href="#" class="socials-wrapper__item-link" aria-label="Facebook"
                   ><svg
                     width="9"
                     height="17"
@@ -57,7 +60,7 @@
                 </a>
               </li>
               <li class="socials-wrapper__item">
-                <a href="#" class="socials-wrapper__item-link"
+                <a href="#" class="socials-wrapper__item-link" aria-label="Telegram"
                   ><svg
                     width="15"
                     height="13"
@@ -78,7 +81,7 @@
                 </a>
               </li>
               <li class="socials-wrapper__item">
-                <a href="#" class="socials-wrapper__item-link"
+                <a href="#" class="socials-wrapper__item-link" aria-label="Twitter"
                   ><svg
                     width="18"
                     height="14"
@@ -95,7 +98,7 @@
                 </a>
               </li>
               <li class="socials-wrapper__item">
-                <a href="#" class="socials-wrapper__item-link"
+                <a href="#" class="socials-wrapper__item-link" aria-label="Medium"
                   ><svg
                     width="17"
                     height="14"
@@ -123,6 +126,8 @@
     </header>
     <!-- / header -->
 
+    <main>
+
     <!-- hero-image -->
     <section class="section-outer section-hero-image">
       <ul class="slider-hero-image">
@@ -139,8 +144,8 @@
               modus congue vituperata.
             </div>
             <div class="btn-icon-play-wrapper">
-              <a href="#">
-                <i class="icon-play"></i>
+              <a href="#" aria-label="Play">
+                <span class="icon-play"></span>
               </a>
             </div>
           </div>
@@ -325,8 +330,8 @@
               </div>
             </li>
           </ul>
-          <a href="#" class="btn-blog btn-blog--prev"></a>
-          <a href="#" class="btn-blog btn-blog--next"></a>
+          <a href="#" class="btn-blog btn-blog--prev" aria-label="Prev"></a>
+          <a href="#" class="btn-blog btn-blog--next" aria-label="Next"></a>
         </div>
 
         <ul class="dots">
@@ -490,21 +495,25 @@
         </div>
         <div class="section-newsletter__right">
           <form action="get" class="form-newsletter">
-            <input type="text" placeholder="Email address" class="input input--size-lg">
-            <button class="btn btn--secondary btn--size-lg">Save me</button>
+            <label for="email" class="visually-hidden">Email:</label>
+            <input id="email" type="text" placeholder="Email address" class="input input--size-lg form-newsletter__input">
+            <button class="btn btn--secondary btn--size-lg form-newsletter__btn">Save me</button>
           </form>
           
       </div>
       <!-- /.section-inner -->
     </section>
     <!-- / newsletter -->
+  </main>
 
     <!-- footer -->
     <footer class="section-outer section-footer">
       <div class="section-inner section-inner--wide">
         <div class="main-novigation">
-          <a href="#" class="logo"></a>
+          <div class="logo">
+          <a href="#" class="logo__link" aria-label="Logo"></a>
           <!-- /.logo -->
+          </div>
           <nav class="nav">
             <ul class="nav-wrapper">
               <li class="nav-wrapper__item">
@@ -532,7 +541,7 @@
           <div class="socials">
             <ul class="socials-wrapper">
               <li class="socials-wrapper__item">
-                <a href="#" class="socials-wrapper__item-link"
+                <a href="#" class="socials-wrapper__item-link" aria-label="Facebook"
                   ><svg
                     width="9"
                     height="17"
@@ -547,7 +556,7 @@
                 </a>
               </li>
               <li class="socials-wrapper__item">
-                <a href="#" class="socials-wrapper__item-link"
+                <a href="#" class="socials-wrapper__item-link" aria-label="Telegram"
                   ><svg
                     width="15"
                     height="13"
@@ -568,7 +577,7 @@
                 </a>
               </li>
               <li class="socials-wrapper__item">
-                <a href="#" class="socials-wrapper__item-link"
+                <a href="#" class="socials-wrapper__item-link" aria-label="Twitter"
                   ><svg
                     width="18"
                     height="14"
@@ -585,7 +594,7 @@
                 </a>
               </li>
               <li class="socials-wrapper__item">
-                <a href="#" class="socials-wrapper__item-link"
+                <a href="#" class="socials-wrapper__item-link" aria-label="Medium"
                   ><svg
                     width="17"
                     height="14"

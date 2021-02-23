@@ -21,6 +21,7 @@ $fw-bold: 700;
 $fs-sm: 12px;
 $fs-md: 15px;
 $fs-lg: 18px;
+$fs-xl: 48px;
 
 $padding-vertical-xs: 20px;
 $padding-vertical-sm: 60px;
@@ -28,9 +29,43 @@ $padding-vertical: 120px;
 
 $transition: 0.2s;
 
-$color-primary: #697ca6;
+$color-white: #fff;
+$color-primary: #495274;
+
 $color-secondary: #6188ff;
 $color-divider: #d8e3fe;
+
+// Cian
+$color-cian-500: #35aaff;
+
+// Red
+$color-danger-500: #ff3535;
+$color-danger-600: #d43f3f;
+
+// Gray
+$color-primary-50: #d1d1e4;
+$color-primary-100: #c7d3ff;
+$color-primary-200: #aeb8d0;
+$color-primary-300: #adb4d2;
+$color-primary-400: #8e96b7;
+$color-primary-500: #8d96bd;
+$color-primary-600: #7382a3;
+$color-primary-700: #7a85ad;
+$color-primary-800: #676f95;
+$color-primary-900: #495274;
+
+// Blue
+$color-secondary-50: #a0b4ff;
+$color-secondary-100: #6888ff;
+$color-secondary-200: #6188ff;
+$color-secondary-300: #5e80ff;
+$color-secondary-400: #5e81fe;
+$color-secondary-500: #4c85ff;
+$color-secondary-600: #5283ff;
+$color-secondary-700: #3a79ff;
+$color-secondary-800: #4074f8;
+$color-secondary-900: #3d4f9f;
+
 // =========== /VARIABLES ================
 
 // =========== COMMON ================
@@ -75,7 +110,7 @@ body {
 
   &--size-lg {
     padding: $base * 5 $base * 6;
-    border-radius: 5px;
+    border-radius: $base;
   }
 }
 
@@ -89,13 +124,13 @@ body {
   font-size: $fs-sm;
   font-weight: $fw-bold;
   text-decoration: none;
-  border-radius: 2px;
+  border-radius: $base/2;
   transition: $transition;
   white-space: nowrap;
 
   &--size-lg {
     padding: $base * 5 $base * 15;
-    border-radius: 5px;
+    border-radius: $base;
   }
 
   &--primary {
@@ -109,7 +144,7 @@ body {
 
   &--danger {
     background-color: #ffd7d7;
-    color: #d43f3f;
+    color: $color-danger-600;
 
     &:hover {
       background-color: darken(#ffd7d7, 5%);
@@ -117,7 +152,7 @@ body {
   }
 
   &--secondary {
-    color: #fff;
+    color: $color-white;
     background-color: #4c85ff;
 
     &:hover {
@@ -126,10 +161,10 @@ body {
 
     &-inverted {
       color: #565f82;
-      background-color: #fff;
+      background-color: $color-white;
 
       &:hover {
-        background-color: darken(#fff, 5%);
+        background-color: darken($color-white, 5%);
       }
     }
   }
@@ -176,7 +211,6 @@ h6 {
   color: #3d4f9f;
 }
 
-h1,
 h2 {
   font-size: 48px;
   margin-bottom: $base * 7;
@@ -227,6 +261,17 @@ h5 {
     }
   }
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
 // =========== /COMMON ================
 
 // === HEADER ===
@@ -243,10 +288,13 @@ h5 {
 }
 
 .logo {
-  background-color: #5e81fe;
-  width: $base * 6;
-  height: $base * 6;
-  border-radius: 100%;
+  &__link {
+    display: block;
+    background-color: #5e81fe;
+    width: $base * 6;
+    height: $base * 6;
+    border-radius: 100%;
+  }
 }
 
 .nav {
@@ -357,7 +405,7 @@ h5 {
   width: $base * 13;
   height: $base * 13;
   border-radius: 100%;
-  box-shadow: 0px 10px 50px rgba(201, 209, 231, 0.6);
+  box-shadow: 0px $base * 2 $base * 12 rgba(201, 209, 231, 0.6);
 
   &::before {
     display: block;
@@ -448,18 +496,22 @@ h5 {
   margin-bottom: $base * 23;
 
   &__item {
+    $margin-left: $base * 10;
+    $divider-width: $base * 7;
+
     position: relative;
     flex-basis: 25%;
     &:not(:first-child) {
-      margin-left: $base * 10;
+      margin-left: $margin-left;
     }
+
     &:not(:first-child)::before {
       content: "";
       position: absolute;
-      top: 120px;
-      left: -34px;
+      top: $base * 30;
+      left: -$divider-width - ($margin-left - $divider-width)/2;
       height: 1px;
-      width: 28px;
+      width: $divider-width;
       background-color: #dae4fe;
     }
 
@@ -525,12 +577,12 @@ h5 {
   }
 
   &__number {
-    font-size: 48px;
+    font-size: $fs-xl;
   }
 
   &__text {
     width: 51%;
-    font-size: 18px;
+    font-size: $fs-lg;
     font-weight: $fw-medium;
     line-height: 1.5;
   }
@@ -547,10 +599,10 @@ h5 {
     align-items: flex-end;
     background: linear-gradient(229.32deg, #6888ff 12.77%, #5e80ff 73.11%);
     text-align: right;
-    color: #fff;
+    color: $color-white;
 
     h2 {
-      color: #fff;
+      color: $color-white;
     }
   }
   &__right {
@@ -574,10 +626,10 @@ h5 {
 }
 
 .slider-blog {
-  background: #ffffff;
+  background: $color-white;
   border: 1px solid #d8e3fe;
   box-sizing: border-box;
-  box-shadow: 0px 15px 50px #eff4ff;
+  box-shadow: 0px $base * 3 $base * 12 #eff4ff;
   &__item {
     padding: $base * 16 $base * 8;
     display: flex;
@@ -588,16 +640,16 @@ h5 {
 
     &-gallery {
       display: grid;
-      grid-template-rows: repeat(2, 120px);
-      grid-template-columns: repeat(3, 120px);
-      grid-gap: 12px;
+      grid-template-rows: repeat(2, $base * 30);
+      grid-template-columns: repeat(3, $base * 30);
+      grid-gap: $base * 3;
 
       .image-link {
         overflow: hidden;
         display: block;
-        border-radius: 5px;
+        border-radius: $base;
         position: relative;
-        box-shadow: 0px 15px 100px #e5ebf8;
+        box-shadow: 0px $base * 3 $base * 25 #e5ebf8;
 
         .image-find {
           display: block;
@@ -608,7 +660,7 @@ h5 {
           width: $base * 16;
           height: $base * 16;
           border-radius: 100%;
-          background: #fff url("../img/find_icon.svg") no-repeat 50% 50%;
+          background: $color-white url("../img/find_icon.svg") no-repeat 50% 50%;
           opacity: 0;
           transition: $transition;
         }
@@ -675,7 +727,7 @@ h5 {
       margin-left: 10%;
 
       .text {
-        font-size: 14px;
+        font-size: $fs-md - 1;
         line-height: 2;
         margin-bottom: $base * 8;
       }
@@ -736,10 +788,10 @@ h5 {
 
   &__item {
     padding: $base * 10 $base * 17 $base * 15;
-    background: #ffffff;
+    background: $color-white;
     border: 1px solid #d8e3fe;
     box-sizing: border-box;
-    box-shadow: 0px 5px 50px #f3f5fa;
+    box-shadow: 0px $base $base * 12 #f3f5fa;
     position: relative;
 
     &-text {
@@ -759,7 +811,7 @@ h5 {
       margin-top: -$height/2;
       border-radius: 100%;
       overflow: hidden;
-      background-color: #fff;
+      background-color: $color-white;
       transform: translateX(-50%);
     }
   }
@@ -781,12 +833,12 @@ h5 {
 
     &--active {
       .arrow {
-        stroke: #495274;
+        stroke: $color-primary;
         // stroke: #8E96B7;
       }
 
       #{$parent}-trigger {
-        color: #495274;
+        color: $color-primary;
         font-weight: $fw-bold;
 
         &-icon {
@@ -846,7 +898,7 @@ h5 {
   background: linear-gradient(229.32deg, #6888ff 12.77%, #5e80ff 73.11%);
 
   text-align: center;
-  color: #fff;
+  color: $color-white;
 
   &::before {
     content: "";
@@ -864,7 +916,7 @@ h5 {
   }
   h2,
   h5 {
-    color: #fff;
+    color: $color-white;
   }
 
   h2 {
@@ -920,11 +972,11 @@ h5 {
 .form-newsletter {
   display: flex;
 
-  .input {
+  &__input {
     flex-grow: 1;
   }
 
-  .btn {
+  &__btn {
     margin-left: $base * 3;
   }
 }
