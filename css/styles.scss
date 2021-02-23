@@ -18,10 +18,13 @@ $fw-regular: 400;
 $fw-medium: 500;
 $fw-bold: 700;
 
-$fs-sm: 12px;
-$fs-md: 15px;
-$fs-lg: 18px;
-$fs-xl: 48px;
+$fs-xxs: 10px;
+$fs-xs: 12px;
+$fs-s: 15px;
+$fs-m: 18px;
+$fs-l: 24px;
+$fs-xl: 36px;
+$fs-xxl: 48px;
 
 $padding-vertical-xs: 20px;
 $padding-vertical-sm: 60px;
@@ -106,7 +109,7 @@ body {
   border: 1px solid transparent;
   background-color: #efeff7;
   color: #7a85ad;
-  font-size: $fs-sm;
+  font-size: $fs-xs;
 
   &--size-lg {
     padding: $base * 5 $base * 6;
@@ -121,7 +124,7 @@ body {
   background: none;
   padding: $base * 3 $base * 4;
   @include quicksand;
-  font-size: $fs-sm;
+  font-size: $fs-xs;
   font-weight: $fw-bold;
   text-decoration: none;
   border-radius: $base/2;
@@ -212,34 +215,12 @@ h6 {
 }
 
 h2 {
-  // font-size: 48px;
-  // margin-bottom: $base * 7;
   @include roboto;
-  font-size: 10px;
+  font-size: $fs-xxs;
   font-weight: $fw-medium;
   margin-bottom: $base * 4;
   text-transform: uppercase;
 }
-
-// h3 {
-//   margin-bottom: $base * 7;
-//   font-size: 36px;
-// }
-
-// h4 {
-//   @include quicksand;
-//   font-size: 24px;
-//   font-weight: $fw-medium;
-//   margin-bottom: $base * 23;
-// }
-
-// h5 {
-//   @include roboto;
-//   font-size: 10px;
-//   font-weight: $fw-medium;
-//   margin-bottom: $base * 4;
-//   text-transform: uppercase;
-// }
 
 .ta-c {
   text-align: center;
@@ -247,7 +228,7 @@ h2 {
 
 .section-subtitle {
   @include quicksand;
-  font-size: 48px;
+  font-size: $fs-xxl;
   margin-bottom: $base * 7;
   color: #3d4f9f;
 }
@@ -324,7 +305,7 @@ h2 {
       @include quicksand;
       font-weight: $fw-medium;
       text-decoration: none;
-      font-size: $fs-sm;
+      font-size: $fs-xs;
       color: $color-primary;
       transition: $transition;
 
@@ -492,7 +473,7 @@ h2 {
   background: url(../img/clouds-features.svg) no-repeat 50% 50%;
   .section-subtitle {
     font-weight: $fw-medium;
-    font-size: 24px;
+    font-size: $fs-l;
     margin-bottom: $base * 23;
   }
 
@@ -542,14 +523,14 @@ h2 {
     &-title {
       @include roboto;
       font-weight: $fw-bold;
-      font-size: $fs-md;
+      font-size: $fs-s;
       color: #4074f8;
       margin-bottom: $base * 7;
     }
     &-text {
       line-height: 2;
       font-weight: $fw-light;
-      font-size: $fs-sm;
+      font-size: $fs-xs;
       // text-align: center;
     }
   }
@@ -560,7 +541,7 @@ h2 {
   align-items: center;
   margin: 0 $base * 4;
   font-weight: $fw-medium;
-  font-size: $fs-sm;
+  font-size: $fs-xs;
   text-transform: uppercase;
 
   &::before,
@@ -592,12 +573,12 @@ h2 {
   }
 
   &__number {
-    font-size: $fs-xl;
+    font-size: $fs-xxl;
   }
 
   &__text {
     width: 51%;
-    font-size: $fs-lg;
+    font-size: $fs-m;
     font-weight: $fw-medium;
     line-height: 1.5;
   }
@@ -635,7 +616,7 @@ h2 {
   background-color: #f5f8ff;
   .section-subtitle {
     font-weight: $fw-medium;
-    font-size: 24px;
+    font-size: $fs-l;
     margin-bottom: $base * 23;
   }
 }
@@ -653,6 +634,8 @@ h2 {
   &__item {
     padding: $base * 16 $base * 8;
     display: flex;
+    justify-content: space-between;
+
     &-gallery,
     &-content {
       flex-basis: 45%;
@@ -744,15 +727,13 @@ h2 {
       }
     }
     &-content {
-      margin-left: 10%;
-
       h3 {
-        font-size: 36px;
+        font-size: $fs-xl;
         margin-bottom: $base * 8;
       }
 
       .text {
-        font-size: $fs-md - 1;
+        font-size: $fs-s - 1;
         line-height: 2;
         margin-bottom: $base * 8;
       }
@@ -792,7 +773,7 @@ h2 {
 
     .section-subtitle {
       font-weight: $fw-medium;
-      font-size: 36px;
+      font-size: $fs-xl;
     }
   }
 
@@ -804,7 +785,7 @@ h2 {
   &__left {
     .text {
       line-height: 2;
-      font-size: $fs-sm;
+      font-size: $fs-xs;
     }
   }
 }
@@ -821,7 +802,7 @@ h2 {
     position: relative;
 
     &-text {
-      font-size: $fs-sm;
+      font-size: $fs-xs;
       line-height: 2;
       color: #676f95;
     }
@@ -834,11 +815,10 @@ h2 {
       left: 50%;
       width: $base * 15;
       height: $height;
-      margin-top: -$height/2;
       border-radius: 100%;
       overflow: hidden;
       background-color: $color-white;
-      transform: translateX(-50%);
+      transform: translate(-50%, -$height/2);
     }
   }
 }
@@ -848,7 +828,7 @@ h2 {
 .section-faq {
   .section-subtitle {
     font-weight: $fw-medium;
-    font-size: 24px;
+    font-size: $fs-l;
     margin-bottom: $base * 16;
   }
 }
@@ -899,7 +879,7 @@ h2 {
       }
 
       &-text {
-        font-size: $fs-md;
+        font-size: $fs-s;
       }
     }
 
@@ -911,7 +891,7 @@ h2 {
       &-text {
         flex-grow: 1;
         line-height: 2;
-        font-size: $fs-sm;
+        font-size: $fs-xs;
       }
 
       &-btn {
@@ -984,7 +964,7 @@ h2 {
 
     &-title {
       @include quicksand;
-      font-size: $fs-lg;
+      font-size: $fs-m;
       color: #3d4f9f;
       margin-bottom: $base * 4;
       font-weight: $fw-bold;
@@ -992,7 +972,7 @@ h2 {
     }
     &-text {
       line-height: 2;
-      font-size: $fs-md;
+      font-size: $fs-s;
     }
   }
 
@@ -1023,7 +1003,7 @@ h2 {
 }
 .copyrigth {
   @include quicksand;
-  font-size: $fs-sm;
+  font-size: $fs-xs;
   font-weight: $fw-medium;
   color: #aeb8d0;
   margin-top: $base * 7;
