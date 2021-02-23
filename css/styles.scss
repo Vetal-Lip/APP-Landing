@@ -212,23 +212,8 @@ h6 {
 }
 
 h2 {
-  font-size: 48px;
-  margin-bottom: $base * 7;
-}
-
-h3 {
-  margin-bottom: $base * 7;
-  font-size: 36px;
-}
-
-h4 {
-  @include quicksand;
-  font-size: 24px;
-  font-weight: $fw-medium;
-  margin-bottom: $base * 23;
-}
-
-h5 {
+  // font-size: 48px;
+  // margin-bottom: $base * 7;
   @include roboto;
   font-size: 10px;
   font-weight: $fw-medium;
@@ -236,8 +221,35 @@ h5 {
   text-transform: uppercase;
 }
 
+// h3 {
+//   margin-bottom: $base * 7;
+//   font-size: 36px;
+// }
+
+// h4 {
+//   @include quicksand;
+//   font-size: 24px;
+//   font-weight: $fw-medium;
+//   margin-bottom: $base * 23;
+// }
+
+// h5 {
+//   @include roboto;
+//   font-size: 10px;
+//   font-weight: $fw-medium;
+//   margin-bottom: $base * 4;
+//   text-transform: uppercase;
+// }
+
 .ta-c {
   text-align: center;
+}
+
+.section-subtitle {
+  @include quicksand;
+  font-size: 48px;
+  margin-bottom: $base * 7;
+  color: #3d4f9f;
 }
 
 .dots {
@@ -381,7 +393,7 @@ h5 {
     text-align: center;
 
     &-content {
-      h2 {
+      .section-subtitle {
         font-weight: $fw-light;
         span {
           font-weight: $fw-medium;
@@ -455,7 +467,7 @@ h5 {
       left: 40%;
     }
     width: 45%;
-    h3 {
+    .section-subtitle {
       font-weight: $fw-light;
       span {
         font-weight: $fw-medium;
@@ -478,8 +490,10 @@ h5 {
 // === FEATURES ===
 .section-features {
   background: url(../img/clouds-features.svg) no-repeat 50% 50%;
-  h4 {
+  .section-subtitle {
     font-weight: $fw-medium;
+    font-size: 24px;
+    margin-bottom: $base * 23;
   }
 
   .btns {
@@ -526,6 +540,7 @@ h5 {
       background-color: #f1f5ff;
     }
     &-title {
+      @include roboto;
       font-weight: $fw-bold;
       font-size: $fs-md;
       color: #4074f8;
@@ -618,6 +633,11 @@ h5 {
 // === BLOG ===
 .section-blog {
   background-color: #f5f8ff;
+  .section-subtitle {
+    font-weight: $fw-medium;
+    font-size: 24px;
+    margin-bottom: $base * 23;
+  }
 }
 
 .slider-wrapper {
@@ -726,6 +746,11 @@ h5 {
     &-content {
       margin-left: 10%;
 
+      h3 {
+        font-size: 36px;
+        margin-bottom: $base * 8;
+      }
+
       .text {
         font-size: $fs-md - 1;
         line-height: 2;
@@ -765,8 +790,9 @@ h5 {
     display: flex;
     justify-content: space-between;
 
-    h3 {
+    .section-subtitle {
       font-weight: $fw-medium;
+      font-size: 36px;
     }
   }
 
@@ -820,8 +846,10 @@ h5 {
 
 // === FAQ ===
 .section-faq {
-  h4 {
+  .section-subtitle {
     font-weight: $fw-medium;
+    font-size: 24px;
+    margin-bottom: $base * 16;
   }
 }
 
@@ -838,11 +866,13 @@ h5 {
       }
 
       #{$parent}-trigger {
-        color: $color-primary;
-        font-weight: $fw-bold;
-
         &-icon {
           transform: rotate(0);
+        }
+
+        &-text {
+          color: $color-primary;
+          font-weight: $fw-bold;
         }
       }
 
@@ -913,24 +943,25 @@ h5 {
   .section-inner {
     position: relative;
     z-index: 10;
-  }
-  h2,
-  h5 {
-    color: $color-white;
-  }
 
-  h2 {
-    font-weight: $fw-light;
-    span {
-      font-weight: $fw-medium;
+    h2 {
+      color: $color-white;
     }
-  }
 
-  .text {
-    max-width: 75%;
-    margin: 0 auto;
-    line-height: 2;
-    margin-bottom: $base * 16;
+    .section-subtitle {
+      color: $color-white;
+      font-weight: $fw-light;
+      span {
+        font-weight: $fw-medium;
+      }
+    }
+
+    .text {
+      max-width: 75%;
+      margin: 0 auto;
+      line-height: 2;
+      margin-bottom: $base * 16;
+    }
   }
 
   .btn-group {
@@ -957,6 +988,7 @@ h5 {
       color: #3d4f9f;
       margin-bottom: $base * 4;
       font-weight: $fw-bold;
+      text-transform: none;
     }
     &-text {
       line-height: 2;
